@@ -10,9 +10,11 @@ const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
 
 const compression = require('compression');
+app.use(compression()); //Compress all routes
 const helmet = require('helmet');
 
 const app = express();
+app.use(helmet());
 
 dotenv.config({ path: '.env' })
 
