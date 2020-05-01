@@ -10,11 +10,11 @@ const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
 
 var compression = require('compression');
-app.use(compression()); //Compress all routes
+
 var helmet = require('helmet');
 var app = express();
 app.use(helmet());
-
+app.use(compression()); //Compress all routes
 dotenv.config({ path: '.env' })
 
 // Set up mongoose connection
